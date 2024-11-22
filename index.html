@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Lesiones Dermatológicas</title>
+    
+    <!-- Cargar TensorFlow.js desde el CDN -->
+    <script id="tensorflow-cdn" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    
+    <style>
+        #loading-message { color: green; font-size: 18px; display: none; }
+        #prediction-list { list-style-type: none; }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .model-info {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+        .model-info h5, .model-info h6 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>ANALIZADOR DE LESIONES DERMATOLÓGICAS</h1>
+    
+    <input type="file" id="image-selector" accept="image/*">
+    <img id="selected-image" width="224" height="224" style="border: 1px solid #ccc; margin-top: 10px;" />
+    <br>
+    <button id="predict-button">Predecir</button>
+    
+    <!-- Mensaje de carga -->
+    <p id="loading-message">Cargando TensorFlow.js...</p>
+    
+    <ul id="prediction-list"></ul>
+    
+    <!-- Información sobre el modelo -->
+    <div class="model-info">
+        <h5><b>Características técnicas del Modelo:</b></h5>
+        <h5><b>Exactitud: 0.89</b></h5>
+        <h5><b>Precisión: 0.88</b></h5>
+        <h5><b>Sensibilidad: 0.88</b></h5>
+        <h6><b>El entrenamiento del modelo está basado en el conjunto de 10015 imágenes dermatoscópicas de Harvard, entrenado con TensorFlow</b></h6>
+    </div>
+
+    <!-- Información adicional -->
+    <footer>
+        <p>Realizado por: Carlos Cortez, <a href="mailto:ccortez@unbosque.edu.co">ccortez@unbosque.edu.co</a></p>
+    </footer>
+
+    <script src="jscript/target_classes.js"></script>  <!-- Cargar el archivo de clases -->
+    <script type="module" src="jscript/predict100.js"></script> <!-- Tu script JavaScript -->
+</body>
+</html>
